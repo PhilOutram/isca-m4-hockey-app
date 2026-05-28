@@ -43,8 +43,8 @@ TEAMS.forEach(t=>{
   m.bindPopup(
     `<div class="pop-team">${t.name}</div>`+
     `<div class="pop-venue">${t.venue}<br>${t.addr}</div>`+
-    `<div class="pop-meta">~${t.miles} mi Â· ~${fmtTime(t.mins)}${t.home?' Â· home pitch':''}${t.guess?' Â· venue unconfirmed':''}</div>`+
-    `<a class="pop-btn" target="_blank" rel="noopener" href="${dirUrl(t)}">Directions â†—</a>`
+    `<div class="pop-meta">~${t.miles} mi &middot; ~${fmtTime(t.mins)}${t.home?' &middot; home pitch':''}${t.guess?' &middot; venue unconfirmed':''}</div>`+
+    `<a class="pop-btn" target="_blank" rel="noopener" href="${dirUrl(t)}">Directions &#8599;</a>`
   );
   markers[t.num]=m;
   bounds.push([t.lat,t.lng]);
@@ -57,7 +57,7 @@ const FitCtl = L.Control.extend({
   options:{position:'topright'},
   onAdd:function(){
     const b=L.DomUtil.create('button','fit-btn');
-    b.type='button'; b.title='Show all pins'; b.innerHTML='â¤¢ Fit all';
+    b.type='button'; b.title='Show all pins'; b.innerHTML='&#10530; Fit all';
     L.DomEvent.disableClickPropagation(b);
     L.DomEvent.on(b,'click',e=>{L.DomEvent.stop(e); fitAll();});
     return b;
@@ -77,11 +77,12 @@ function render(sortKey){
       `<div class="info"><div class="team">${t.name}`+
         (t.home?'<span class="tag">home pitch</span>':'')+
         (t.guess?'<span class="tag warn">check</span>':'')+
-      `</div><div class="venue">${t.venue} Â· ${t.addr.split(',').pop().trim()}</div></div>`+
+      `</div><div class="venue">${t.venue} &middot; ${t.addr.split(',').pop().trim()}</div></div>`+
       `<div class="meta"><div class="dist">${t.miles} mi</div><div class="time">~${fmtTime(t.mins)}</div></div>`+
-      `<a class="dir" target="_blank" rel="noopener" href="${dirUrl(t)}" title="Directions" aria-label="Directions">âžœ</a>`;
+      `<a class="dir" target="_blank" rel="noopener" href="${dirUrl(t)}" title="Directions" aria-label="Directions">&#10140;</a>`;
     card.addEventListener('click',e=>{
       if(e.target.closest('.dir')) return;
+      document.getElementById('map').scrollIntoView({behavior:'smooth',block:'start'});
       map.setView([t.lat,t.lng], t.home?14:11, {animate:true});
       markers[t.num].openPopup();
       card.classList.add('flash');
