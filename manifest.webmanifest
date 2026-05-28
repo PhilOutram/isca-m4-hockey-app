@@ -1,0 +1,12 @@
+{
+  "name": "Div 2 South â€” Away Days",
+  "short_name": "Away Days",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fbf7f4",
+  "theme_color": "#7a1228",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
