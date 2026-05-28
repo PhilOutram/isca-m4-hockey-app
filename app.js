@@ -11,7 +11,7 @@ const TEAMS = [
   {num:8, name:"Truro M2",               venue:"Truro Hockey Club (Richard Lander School)", addr:"Trennick Ln, Truro TR1 1TH", lat:50.26078, lng:-5.04189, miles:86, mins:110},
   {num:9, name:"University of Exeter M4", venue:"Exeter University Sports Park", addr:"Stocker Rd, Exeter EX4 4QL",          lat:50.73830, lng:-3.53760, miles:5,  mins:18, home:true},
   {num:10,name:"University of Exeter M6", venue:"Exeter University Sports Park", addr:"Stocker Rd, Exeter EX4 4QL",          lat:50.73880, lng:-3.53620, miles:5,  mins:18, home:true},
-  {num:11,name:"Uni. of Plymouth M1",    venue:"Lipson Co-op Academy",          addr:"Bernice Terrace, Plymouth PL4 7PG",  lat:50.38080, lng:-4.12330, miles:44, mins:58, guess:true},
+  {num:11,name:"Uni. of Plymouth M1",    venue:"Plymouth Marjon Hockey Centre", addr:"Derriford Rd, Plymouth PL6 8BH",     lat:50.42040, lng:-4.11230, miles:46, mins:55},
 ];
 
 function dirUrl(t){
