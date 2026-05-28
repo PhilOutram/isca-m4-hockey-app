@@ -100,3 +100,9 @@ bLeague.onclick=()=>{render('league');bLeague.classList.add('on');bDist.classLis
 if('serviceWorker' in navigator){
   window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
+
+const APP_VERSION = "2026-05-28";   // bump this each time you deploy
+const ver = document.createElement("div");
+ver.style.cssText = "text-align:center;font-size:11px;color:#9c8e90;padding:4px 0 24px";
+ver.textContent = "build " + APP_VERSION;
+document.querySelector(".wrap").appendChild(ver);
